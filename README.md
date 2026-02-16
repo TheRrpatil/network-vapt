@@ -3,6 +3,7 @@
 🔐 Network Vulnerability Assessment & Exploitation – Lab Environment
 
 📌 Project Overview
+
 This project demonstrates a complete Network Vulnerability Assessment and Controlled Exploitation performed in an isolated lab environment using Metasploitable 2 as the vulnerable target system.
 The objective was to simulate a real-world security assessment by identifying exposed services, analyzing vulnerabilities, validating critical findings, and recommending remediation strategies.
 
