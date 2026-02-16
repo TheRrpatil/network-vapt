@@ -1,66 +1,121 @@
 # network-vapt
-This project documents a comprehensive vulnerability assessment conducted within a controlled lab environment. The assessment focused on identifying open ports, detecting outdated services, evaluating security risks using CVSS scoring, and providing structured remediation recommendations.
+
+🔐 Network Vulnerability Assessment & Exploitation – Lab Environment
+
+📌 Project Overview
+This project demonstrates a complete Network Vulnerability Assessment and Controlled Exploitation performed in an isolated lab environment using Metasploitable 2 as the vulnerable target system.
+The objective was to simulate a real-world security assessment by identifying exposed services, analyzing vulnerabilities, validating critical findings, and recommending remediation strategies.
+
+⚠️ This project was conducted strictly in a controlled lab environment for educational and ethical purposes only.
+
 🎯 Objectives
-
-Discover live hosts within the lab network
-
+Perform full network enumeration
 Identify open ports and running services
+Detect outdated or vulnerable software
+Prioritize risks using CVSS scoring
+Validate critical vulnerabilities via controlled exploitation
+Document findings in a structured security report
 
-Detect vulnerabilities using automated scanning tools
+🛠 Tools & Technologies Used
+Nmap – Network scanning & service enumeration
+Metasploit Framework – Exploitation & validation
+Searchsploit – CVE research
+Netcat – Manual testing
+Kali Linux – Attacker machine
+Metasploitable 2 – Vulnerable target machine
 
-Prioritize findings based on CVSS severity ratings
+🌐 Lab Setup
+Component	Details
+Target System	Metasploitable 2
+Target IP	Internal Lab Network
+Attack Machine	Kali Linux
+Network Type	Isolated Virtual Lab
 
-Recommend actionable remediation steps
+🔎 Phase 1 – Network Enumeration
+Performed a full TCP scan to identify exposed services:
+nmap -sV -O -p- <target-ip>
 
-🛠 Tools Used
+Identified Services Included:
+FTP (Port 21)
+SSH (Port 22)
+Telnet (Port 23)
+SMTP (Port 25)
+DNS (Port 53)
+HTTP (Port 80)
+SMB (Ports 139/445)
+PostgreSQL (Port 5432)
+VNC (Port 5900)
+Apache Tomcat (Port 8180)
 
-Nmap – Network discovery and port scanning
+🔎 Phase 2 – Vulnerability Assessment
+Used OpenVAS to detect:
+Outdated service versions
+Weak authentication mechanisms
+Remote Code Execution vulnerabilities
+Exposed database services
+Misconfigurations
 
-OpenVAS – Vulnerability assessment and management
-
-Linux (Kali/Ubuntu) – Testing environment
-
-🔎 Methodology
-1️⃣ Network Scanning (Nmap)
-
-Performed host discovery
-
-Conducted TCP SYN scans
-
-Identified service versions
-
-Enumerated exposed ports
-
-Example command:
-
-nmap -sS -sV -O 192.168.1.0/24
-
-2️⃣ Vulnerability Scanning (OpenVAS)
-
-Configured and launched full vulnerability scan
-
-Analyzed detected vulnerabilities
-
-Exported scan reports
-
-Reviewed CVSS base scores
-
-3️⃣ Risk Prioritization
-
-Vulnerabilities were categorized as:
-
-🔴 Critical (CVSS 9.0–10.0)
-
-🟠 High (CVSS 7.0–8.9)
-
-🟡 Medium (CVSS 4.0–6.9)
-
-🟢 Low (CVSS 0.1–3.9)
-
-Prioritization was based on:
-
-CVSS score
-
+Vulnerabilities were categorized based on:
+CVSS v3 scoring
 Exploitability
+Impact severity
 
-Impact on confidentiality, integrity, and availability
+Severity levels assigned:
+Critical
+High
+Medium
+Low
+
+🔎 Phase 3 – Controlled Exploitation
+Critical vulnerabilities were validated using Metasploit Framework.
+
+Examples of validated findings:
+Samba Remote Code Execution
+FTP Backdoor vulnerability
+Weak SSH credentials
+Exposed PostgreSQL access
+VNC weak authentication
+
+Successful exploitation demonstrated:
+Remote shell access
+Privilege escalation
+Database access
+Full system compromise (in lab)
+
+📊 Risk Analysis & Impact
+The assessment revealed multiple high-risk vulnerabilities that could lead to:
+Remote Code Execution
+Unauthorized access
+Data exfiltration
+Privilege escalation
+Lateral movement within a network
+
+🛡 Remediation Recommendations
+Disable legacy and insecure services (e.g., Telnet, R-services)
+Replace FTP with SFTP
+Enforce strong authentication policies
+Patch outdated software versions
+Restrict database exposure to internal networks
+Implement firewall segmentation
+Enable logging and monitoring for suspicious activity
+
+📄 Documentation
+A detailed vulnerability assessment report is included in this repository:
+📎 NetworkVAPT.pdf
+
+The report contains:
+Technical findings
+Exploitation evidence
+CVSS-based risk prioritization
+Remediation strategies
+
+🎓 Key Learning Outcomes
+Practical network enumeration techniques
+Vulnerability analysis and CVE research
+Risk prioritization using CVSS
+Real-world exploitation validation
+Security reporting methodology
+
+⚠️ Disclaimer
+This project was conducted in a virtual lab environment for educational purposes only.
+Unauthorized testing on real-world systems is illegal and unethical.
