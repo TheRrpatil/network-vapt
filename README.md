@@ -17,7 +17,7 @@ Prioritize risks using CVSS scoring
 Validate critical vulnerabilities via controlled exploitation
 Document findings in a structured security report
 
-🛠 Tools & Technologies Used
+🛠 Tools & Technologies Used 
 Nmap – Network scanning & service enumeration
 Metasploit Framework – Exploitation & validation
 Searchsploit – CVE research
