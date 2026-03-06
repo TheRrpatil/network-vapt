@@ -121,9 +121,3 @@ Security reporting methodology
 ⚠️ Disclaimer
 This project was conducted in a virtual lab environment for educational purposes only.
 Unauthorized testing on real-world systems is illegal and unethical.
-
-
-
-
-
-
