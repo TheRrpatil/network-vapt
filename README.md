@@ -78,6 +78,7 @@ Weak SSH credentials
 Exposed PostgreSQL access
 VNC weak authentication
 
+
 Successful exploitation demonstrated:
 Remote shell access
 Privilege escalation
